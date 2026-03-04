@@ -54,25 +54,25 @@ export default function Header() {
         <header
           className={`${isScrolled ? 'fixed top-0 bg-[#1a1410]/95 backdrop-blur-md h-16 shadow-lg shadow-black/20' : 'relative bg-transparent h-28'} left-0 right-0 z-[1001] transition-all duration-500 ease-in-out border-b border-white/5`}
         >
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center px-6 md:px-12 h-full max-w-[1800px] mx-auto w-full">
+          <div className="grid grid-cols-[1.5fr_1fr_1.5fr] items-center px-4 md:px-12 h-full max-w-[1800px] mx-auto w-full">
 
             {/* LEFT: Nav */}
-            <div className="flex items-center gap-4 lg:gap-8">
+            <div className="flex items-center gap-4">
               {/* Hamburger (Tablet/Mobile) */}
               <button onClick={() => setIsMenuOpen(true)} className="md:hidden lg:hidden bg-transparent border-none text-white p-2">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
               </button>
 
               {/* Desktop Links */}
-              <div className="hidden md:flex items-center gap-4 lg:gap-8 overflow-hidden">
-                <Link href="/ethnic-home" className="text-white no-underline text-[9px] font-mono tracking-[1.5px] font-medium uppercase hover:text-[#a17a58] transition-colors whitespace-nowrap">ETHNIC</Link>
-                <Link href="/western-home" className="text-white no-underline text-[9px] font-mono tracking-[1.5px] font-medium uppercase hover:text-[#a17a58] transition-colors whitespace-nowrap">WESTERN</Link>
-                <Link href="/collections/celebrity-styles" className="hidden lg:block text-white no-underline text-[9px] font-mono tracking-[1.5px] font-medium uppercase hover:text-[#a17a58] transition-colors whitespace-nowrap">CELEBRITY STYLES</Link>
+              <div className="hidden md:flex items-center gap-4 lg:gap-6 overflow-hidden">
+                <Link href="/ethnic-home" className="text-white no-underline text-[8.5px] lg:text-[9px] font-mono tracking-[1.5px] font-medium uppercase hover:text-[#a17a58] transition-colors whitespace-nowrap">ETHNIC</Link>
+                <Link href="/western-home" className="text-white no-underline text-[8.5px] lg:text-[9px] font-mono tracking-[1.5px] font-medium uppercase hover:text-[#a17a58] transition-colors whitespace-nowrap">WESTERN</Link>
+                <Link href="/collections/celebrity-styles" className="hidden xl:block text-white no-underline text-[8.5px] lg:text-[9px] font-mono tracking-[1.5px] font-medium uppercase hover:text-[#a17a58] transition-colors whitespace-nowrap">CELEBRITY STYLES</Link>
               </div>
             </div>
 
             {/* CENTER: Stacked Logo */}
-            <div className="flex justify-center px-4">
+            <div className="flex justify-center px-2">
               <Link href="/" className="flex flex-col items-center group no-underline">
                 <img src="https://asukacouture.com/cdn/shop/files/Untitled_design_70x.png?v=1672665412"
                   alt="Asuka"
