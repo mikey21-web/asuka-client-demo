@@ -6,13 +6,13 @@ export default function Contact() {
   return (
     <div style={{ background: 'white', minHeight: '100vh' }}>
       <Header />
-      <main style={{ padding: '80px 48px', maxWidth: '1400px', margin: '0 auto' }}>
+      <main className="py-12 px-4 sm:px-8 md:px-12 max-w-[1400px] mx-auto">
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-          <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '48px', fontWeight: 300, letterSpacing: '8px', color: '#1a1410', marginBottom: '16px' }}>CONTACT US</h1>
+          <h1 className="font-serif text-3xl sm:text-5xl font-light tracking-[8px] text-[#1a1410] mb-4">CONTACT US</h1>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '4px', color: '#a17a58' }}>CONNECT WITH OUR ATELIER</div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
           {/* Contact Info */}
           <div>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '28px', color: '#1a1410', marginBottom: '40px', fontWeight: 300 }}>Get in Touch</h2>

@@ -412,7 +412,7 @@ export default function AIWidget() {
   ]
 
   return (
-    <div className="fixed bottom-20 right-4 sm:bottom-7 sm:right-7 z-[9999]">
+    <div className="fixed bottom-24 right-4 sm:bottom-[88px] sm:right-7 z-[9999]">
       {/* Panel */}
       {open && (
         <div className="animate-panelOpen fixed bottom-20 sm:bottom-[100px] right-2 sm:right-7 w-[calc(100vw-16px)] sm:w-[380px] md:w-[420px] max-h-[80vh] sm:max-h-[85vh] bg-[#fdf9f5] border border-[#d4c4b0] flex flex-col shadow-[0_20px_80px_rgba(0,0,0,0.15)] z-[9998] overflow-hidden rounded-xl">

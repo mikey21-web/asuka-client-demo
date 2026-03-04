@@ -36,7 +36,7 @@ export default function SearchPage() {
   return (
     <div style={{ background: 'white', minHeight: '100vh' }}>
       <Header />
-      <main style={{ padding: '80px 48px' }}>
+      <main className="py-12 px-4 sm:px-8 md:px-12">
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', marginBottom: '60px' }}>
           <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '40px', fontWeight: 300, color: '#1a1410', marginBottom: '24px' }}>SEARCH</h1>
           <div style={{ position: 'relative' }}>
@@ -56,7 +56,7 @@ export default function SearchPage() {
           {loading ? (
             <div style={{ textAlign: 'center', padding: '100px 0', color: '#a17a58' }}>Searching...</div>
           ) : results.length > 0 ? (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '24px' }}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
               {results.map(p => (
                 <Link key={p.id} href={`/products/${p.handle}`} style={{ textDecoration: 'none' }}>
                   <div style={{ aspectRatio: '2/3', background: '#f5f0e8', marginBottom: '12px', overflow: 'hidden' }}>

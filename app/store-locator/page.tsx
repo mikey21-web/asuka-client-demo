@@ -30,13 +30,13 @@ export default function StoreLocator() {
   return (
     <div style={{ background: 'white', minHeight: '100vh' }}>
       <Header />
-      <main style={{ padding: '80px 48px', maxWidth: '1400px', margin: '0 auto' }}>
+      <main className="py-12 px-4 sm:px-8 md:px-12 max-w-[1400px] mx-auto">
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-          <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '48px', fontWeight: 300, letterSpacing: '8px', color: '#1a1410', marginBottom: '16px' }}>STORE LOCATOR</h1>
+          <h1 className="font-serif text-3xl sm:text-5xl font-light tracking-[8px] text-[#1a1410] mb-4">STORE LOCATOR</h1>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '4px', color: '#a17a58' }}>VISIT OUR PHYSICAL ATELIERS</div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '40px' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {STORES.map(s => (
             <div key={s.city} style={{ textAlign: 'center' }}>
               <div style={{ aspectRatio: '3/4', overflow: 'hidden', marginBottom: '24px', background: '#f5f0e8' }}>

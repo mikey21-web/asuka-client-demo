@@ -8,20 +8,20 @@ export default function AboutUs() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section style={{ position: 'relative', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+        <section className="relative h-[350px] sm:h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden">
           <img
             src="https://asukacouture.com/cdn/shop/files/Screenshot_2025-02-22_at_2.33.36_PM.png?v=1740215030"
             alt="About Asuka"
             style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0, opacity: 0.8 }}
           />
           <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', color: 'white' }}>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '64px', fontWeight: 300, letterSpacing: '8px', textTransform: 'uppercase', marginBottom: '24px' }}>ABOUT US</h1>
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light tracking-[8px] uppercase mb-6">ABOUT US</h1>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '4px' }}>RITUALS OF FINE DRESSING</div>
           </div>
         </section>
 
         {/* Story Section */}
-        <section style={{ padding: '100px 48px', maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+        <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-8 md:px-12 max-w-[1000px] mx-auto text-center">
           <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', color: '#a17a58', marginBottom: '40px', fontWeight: 300 }}>Our Vision</h2>
           <p style={{ fontSize: '18px', lineHeight: 1.8, color: '#444', marginBottom: '32px', fontWeight: 300 }}>
             Founded in 1991, Asuka Couture has been a beacon of luxury men's fashion, blending timeless traditions with modern silhouettes. Our journey began with a simple passion: to create clothes that celebrate the ritual of dressing up.
@@ -33,7 +33,7 @@ export default function AboutUs() {
 
         {/* Pillars Section */}
         <section style={{ background: '#FAF6F1', padding: '100px 48px' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '40px' }}>
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10">
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: '40px', marginBottom: '20px' }}>🧵</div>
               <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '24px', color: '#1a1410', marginBottom: '16px' }}>Master Tailoring</h3>

@@ -464,7 +464,7 @@ export default function SizingPage() {
               </div>
 
               {/* CTAs */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', marginBottom: '32px' }}>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                 <Link href="/collections/ethnic-wear-for-men" style={{
                   display: 'block', padding: '18px', background: BRAND, color: 'white', textAlign: 'center',
                   fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', textDecoration: 'none',
