@@ -62,13 +62,12 @@ export default function Header() {
             </button>
 
             {/* LEFT: Primary nav (Desktop only) */}
-            <nav style={{ gap: '28px', alignItems: 'center' }} className="hidden md:flex">
+            <nav className="hidden md:flex items-center gap-7 lg:gap-10">
               {['ETHNIC', 'WESTERN', 'CELEBRITY STYLES'].map(item => (
                 <Link key={item}
                   href={item === 'ETHNIC' ? '/ethnic-home' : item === 'WESTERN' ? '/western-home' : '/collections/celebrity-styles'}
-                  style={{ color: 'white', textDecoration: 'none', fontSize: '11px', fontFamily: 'var(--font-mono)', letterSpacing: '2px', fontWeight: 500, opacity: 0.9, transition: 'opacity 0.2s' }}
-                  onMouseEnter={e => e.currentTarget.style.opacity = '1'}
-                  onMouseLeave={e => e.currentTarget.style.opacity = '0.9'}>
+                  className="text-white no-underline text-[11px] font-mono tracking-[2px] font-medium opacity-90 hover:opacity-100 transition-opacity"
+                >
                   {item}
                 </Link>
               ))}
@@ -86,11 +85,11 @@ export default function Header() {
             </div>
 
             {/* RIGHT: AI links (Desktop only) */}
-            <div style={{ gap: '20px', alignItems: 'center' }} className="hidden md:flex">
-              <Link href="/make-it-yourself" style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '2px', color: 'white', textDecoration: 'none', opacity: 0.85, whiteSpace: 'nowrap' }}>
+            <div className="hidden md:flex items-center gap-5">
+              <Link href="/make-it-yourself" className="font-mono text-[10px] tracking-[2px] text-white no-underline opacity-85 hover:opacity-100 whitespace-nowrap">
                 ✦ MAKE IT YOURSELF
               </Link>
-              <Link href="/sizing" style={{ background: 'white', color: '#a17a58', padding: '8px 18px', fontSize: '10px', fontFamily: 'var(--font-mono)', letterSpacing: '2px', textDecoration: 'none', fontWeight: 700, whiteSpace: 'nowrap' }}>
+              <Link href="/sizing" className="bg-white text-[#a17a58] px-[18px] py-2 text-[10px] font-mono tracking-[2px] no-underline font-bold whitespace-nowrap">
                 AI SIZER
               </Link>
             </div>
