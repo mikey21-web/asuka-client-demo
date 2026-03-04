@@ -52,51 +52,54 @@ export default function Header() {
 
         {/* Floating nav — transparent, overlays the hero image */}
         <header
-          style={{ transition: 'all 0.4s ease' }}
-          className={`${isScrolled ? 'fixed top-0 bg-[#1a1410]/95 backdrop-blur-md' : 'absolute top-[39px] bg-transparent'} left-0 right-0 z-[1001]`}
+          className={`${isScrolled ? 'fixed top-0 bg-[#1a1410]/95 backdrop-blur-md h-16' : 'absolute top-[39px] bg-transparent h-24'} left-0 right-0 z-[1001] transition-all duration-500 ease-in-out border-b border-white/10`}
         >
-          <div className="flex items-center justify-between px-5 h-20 max-w-[1600px] mx-auto relative">
-            {/* MOBILE ONLY: Hamburger */}
-            <button onClick={() => setIsMenuOpen(true)} style={{ display: 'block', background: 'none', border: 'none', color: 'white' }} className="md:hidden">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
-            </button>
+          <div className="grid grid-cols-3 items-center px-4 md:px-10 h-full max-w-[1800px] mx-auto w-full">
 
             {/* LEFT: Primary nav (Desktop only) */}
-            <nav className="hidden md:flex items-center gap-7 lg:gap-10">
+            <div className="hidden md:flex items-center gap-6 lg:gap-8">
               {['ETHNIC', 'WESTERN', 'CELEBRITY STYLES'].map(item => (
                 <Link key={item}
                   href={item === 'ETHNIC' ? '/ethnic-home' : item === 'WESTERN' ? '/western-home' : '/collections/celebrity-styles'}
-                  className="text-white no-underline text-[11px] font-mono tracking-[2px] font-medium opacity-90 hover:opacity-100 transition-opacity"
+                  className="text-white no-underline text-[10px] font-mono tracking-[2px] font-medium opacity-80 hover:opacity-100 transition-opacity whitespace-nowrap"
                 >
                   {item}
                 </Link>
               ))}
-            </nav>
+            </div>
 
-            {/* CENTER: ASUKA logo */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              <Link href="/" className="flex items-center gap-2 no-underline">
+            {/* MOBILE ONLY: Hamburger (Left side of grid) */}
+            <div className="flex md:hidden justify-start">
+              <button onClick={() => setIsMenuOpen(true)} className="bg-none border-none text-white p-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
+              </button>
+            </div>
+
+            {/* CENTER: ASUKA logo (Stacked) */}
+            <div className="flex justify-center">
+              <Link href="/" className="flex flex-col items-center group no-underline">
                 <img src="https://asukacouture.com/cdn/shop/files/Untitled_design_70x.png?v=1672665412"
                   alt="Asuka"
-                  className="h-8 brightness-0 invert"
+                  className={`${isScrolled ? 'h-5' : 'h-8'} brightness-0 invert transition-all duration-300`}
                 />
-                <span className="font-serif text-2xl tracking-[6px] text-white uppercase font-light hidden sm:inline-block">ASUKĀ</span>
+                <span className={`${isScrolled ? 'text-lg tracking-[4px]' : 'text-2xl tracking-[8px]'} font-serif text-white uppercase font-light transition-all duration-300 mt-1`}>ASUKĀ</span>
               </Link>
             </div>
 
-            {/* RIGHT: AI links (Desktop only) */}
-            <div className="hidden md:flex items-center gap-5">
-              <Link href="/make-it-yourself" className="font-mono text-[10px] tracking-[2px] text-white no-underline opacity-85 hover:opacity-100 whitespace-nowrap">
-                ✦ MAKE IT YOURSELF
-              </Link>
-              <Link href="/sizing" className="bg-white text-[#a17a58] px-[18px] py-2 text-[10px] font-mono tracking-[2px] no-underline font-bold whitespace-nowrap">
-                AI SIZER
-              </Link>
-            </div>
+            {/* RIGHT: AI links (Desktop) / Search (Mobile) */}
+            <div className="flex justify-end items-center gap-4 lg:gap-6">
+              {/* Desktop Actions */}
+              <div className="hidden md:flex items-center gap-5">
+                <Link href="/make-it-yourself" className="font-mono text-[9px] tracking-[2px] text-white no-underline opacity-80 hover:opacity-100 whitespace-nowrap">
+                  ✦ MAKE IT YOURSELF
+                </Link>
+                <Link href="/sizing" className="bg-white text-[#a17a58] px-4 py-2 text-[9px] font-mono tracking-[2px] no-underline font-bold whitespace-nowrap hover:bg-[#a17a58] hover:text-white transition-colors">
+                  AI SIZER
+                </Link>
+              </div>
 
-            {/* MOBILE ONLY: Right actions */}
-            <div className="flex md:hidden items-center gap-4">
-              <Link href="/search" style={{ color: 'white' }}>
+              {/* Mobile Search Icon */}
+              <Link href="/search" className="text-white p-2 md:opacity-80 md:hover:opacity-100 transition-opacity">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="11" cy="11" r="7" /><path d="m16.5 16.5 4 4" /></svg>
               </Link>
             </div>
