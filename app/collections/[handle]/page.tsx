@@ -123,11 +123,7 @@ export default function CollectionPage() {
       </div>
 
       {/* Toolbar */}
-      <div style={{
-        position: 'sticky', top: 0, zIndex: 100, background: 'white',
-        borderBottom: '1px solid #eee', padding: '0 48px',
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '52px',
-      }}>
+      <div className="sticky top-0 z-[100] bg-white border-b border-[#eee] px-4 sm:px-8 md:px-12 flex items-center justify-between h-[52px]">
         <span style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: '#888', letterSpacing: '1px' }}>
           {sortedProducts.length} products
         </span>
@@ -154,8 +150,8 @@ export default function CollectionPage() {
       </div>
 
       {/* Product Grid */}
-      <div style={{ padding: '48px', maxWidth: '1400px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '30px 20px' }}>
+      <div className="px-4 sm:px-6 md:px-12 py-8 md:py-12 max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-[30px_20px]">
           {visibleProducts.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}

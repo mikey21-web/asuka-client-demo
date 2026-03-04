@@ -91,17 +91,17 @@ export default function ProductPage() {
         <>
             <Header />
             <main style={{ background: '#fffdfd', paddingTop: '20px', paddingBottom: '80px' }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
+                <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10">
 
                     {/* Breadcrumb */}
-                    <nav style={{ marginBottom: '24px', fontFamily: 'var(--font-sans)', fontSize: '12px', letterSpacing: '1px', color: '#888' }}>
+                    <nav className="mb-4 sm:mb-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', letterSpacing: '1px', color: '#888' }}>
                         <Link href="/" style={{ color: '#888', textDecoration: 'none' }}>Home</Link>
                         <span style={{ margin: '0 8px' }}>/</span>
                         <span style={{ color: BRAND_INK }}>{product.title}</span>
                     </nav>
 
-                    {/* Product layout */}
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'start' }}>
+                    {/* Product layout — stacks vertically on mobile */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-start">
 
                         {/* LEFT: Image gallery */}
                         <div>
@@ -123,7 +123,7 @@ export default function ProductPage() {
                         </div>
 
                         {/* RIGHT: Product info */}
-                        <div style={{ position: 'sticky', top: '100px' }}>
+                        <div className="md:sticky md:top-[100px]">
                             <h1 style={{ fontFamily: 'var(--font-sans)', fontSize: '26px', fontWeight: 400, color: BRAND_INK, textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 16px' }}>
                                 {product.title}
                             </h1>
@@ -226,7 +226,7 @@ export default function ProductPage() {
                 {sizerOpen && (
                     <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2000 }}
                         onClick={e => { if (e.target === e.currentTarget) setSizerOpen(false) }}>
-                        <div style={{ width: '440px', background: 'white', display: 'flex', flexDirection: 'column', overflow: 'hidden' }} className="animate-panelOpen">
+                        <div className="w-[90vw] max-w-[440px] bg-white flex flex-col overflow-hidden animate-panelOpen">
 
                             {/* Header */}
                             <div style={{ padding: '18px 20px', background: BRAND_INK, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
