@@ -141,7 +141,7 @@ export default function Header() {
       >
         <div className="flex items-center justify-between px-5 h-16 max-w-[1600px] mx-auto">
           {/* MOBILE ONLY: Hamburger */}
-          <button onClick={() => setIsMenuOpen(true)} style={{ display: 'block', background: 'none', border: 'none', color: '#1a1410' }} className="md:hidden">
+          <button onClick={() => setIsMenuOpen(true)} className="md:hidden bg-transparent border-none text-[#1a1410] cursor-pointer p-1">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
           </button>
 

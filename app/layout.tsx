@@ -49,6 +49,7 @@ export const viewport = {
 }
 
 import WhatsAppFloat from '@/components/WhatsAppFloat'
+import AIWidget from '@/components/widget/AIWidget'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <WhatsAppFloat />
+        <AIWidget />
       </body>
     </html>
   )
