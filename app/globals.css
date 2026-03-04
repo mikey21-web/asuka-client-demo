@@ -72,7 +72,7 @@
 
 @layer components {
   .page-width {
-    @apply max-width-[1400px] mx-auto px-10;
+    @apply max-w-[1400px] mx-auto px-10;
   }
 
   @media screen and (max-width: 768px) {
@@ -121,19 +121,6 @@ a {
 ::selection {
   background: rgba(161, 122, 88, 0.15);
   color: var(--ink);
-}
-
-/* ── TYPOGRAPHY ── */
-.font-serif {
-  font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
-}
-
-.font-mono {
-  font-family: var(--font-mono), 'Courier New', monospace;
-}
-
-.font-sans {
-  font-family: var(--font-sans), 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* ── MARQUEE ── */
