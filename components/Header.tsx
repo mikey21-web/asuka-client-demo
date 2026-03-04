@@ -44,7 +44,7 @@ export default function Header() {
       <>
         {/* Brown announcement bar */}
         <div style={{ background: '#a17a58', color: 'white', padding: '10px 0', textAlign: 'center', position: 'relative', zIndex: 1002 }}>
-          <a href="/pages/store-locator" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '3px', fontWeight: 500, color: 'white', textDecoration: 'none' }}>
+          <a href="/store-locator" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '3px', fontWeight: 500, color: 'white', textDecoration: 'none' }}>
             HYDERABAD | MUMBAI | AHMEDABAD
           </a>
         </div>
@@ -64,7 +64,7 @@ export default function Header() {
             <nav style={{ display: 'flex', gap: '28px', alignItems: 'center' }}>
               {['ETHNIC', 'WESTERN', 'CELEBRITY STYLES'].map(item => (
                 <Link key={item}
-                  href={item === 'ETHNIC' ? '/pages/ethnic-home' : item === 'WESTERN' ? '/pages/western-home' : '/collections/celebrity-styles'}
+                  href={item === 'ETHNIC' ? '/ethnic-home' : item === 'WESTERN' ? '/western-home' : '/collections/celebrity-styles'}
                   style={{ color: 'white', textDecoration: 'none', fontSize: '11px', fontFamily: 'var(--font-mono)', letterSpacing: '2px', fontWeight: 500, opacity: 0.9, transition: 'opacity 0.2s' }}
                   onMouseEnter={e => e.currentTarget.style.opacity = '1'}
                   onMouseLeave={e => e.currentTarget.style.opacity = '0.9'}>
@@ -83,7 +83,7 @@ export default function Header() {
 
             {/* RIGHT: AI links */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-              <Link href="/pages/make-it-yourself" style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '2px', color: 'white', textDecoration: 'none', opacity: 0.85, whiteSpace: 'nowrap' }}>
+              <Link href="/make-it-yourself" style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '2px', color: 'white', textDecoration: 'none', opacity: 0.85, whiteSpace: 'nowrap' }}>
                 ✦ MAKE IT YOURSELF
               </Link>
               <Link href="/stylist" style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '2px', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
@@ -104,11 +104,11 @@ export default function Header() {
     <>
       {/* Ethnic / Western switcher bar */}
       <div style={{ display: 'flex', zIndex: 1002, position: 'relative' }}>
-        <Link href="/pages/ethnic-home"
+        <Link href="/ethnic-home"
           style={{ flex: 1, padding: '10px 0', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '3px', color: 'white', textDecoration: 'none', background: !isWestern ? '#1a1410' : '#1a1410', borderRight: '1px solid rgba(255,255,255,0.1)' }}>
           Ethnic Wear
         </Link>
-        <Link href="/pages/western-home"
+        <Link href="/western-home"
           style={{ flex: 1, padding: '10px 0', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '3px', color: 'white', textDecoration: 'none', background: '#1a1410' }}>
           Western Wear
         </Link>
@@ -176,7 +176,7 @@ export default function Header() {
 
           {/* Right: Actions */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Link href="/pages/make-it-yourself" style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '1.5px', color: isWestern ? 'white' : '#a17a58', textDecoration: 'none', whiteSpace: 'nowrap' }}>✦ MAKE IT YOURSELF</Link>
+            <Link href="/make-it-yourself" style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '1.5px', color: isWestern ? 'white' : '#a17a58', textDecoration: 'none', whiteSpace: 'nowrap' }}>✦ MAKE IT YOURSELF</Link>
             <Link href="/sizing" style={{ background: isWestern ? 'white' : '#a17a58', color: isWestern ? '#a17a58' : 'white', padding: '8px 16px', fontSize: '9px', fontFamily: 'var(--font-mono)', letterSpacing: '2px', textDecoration: 'none', fontWeight: 600 }}>AI SIZER</Link>
             {/* User */}
             <button type="button" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: isWestern ? 'white' : '#1a1410' }}>

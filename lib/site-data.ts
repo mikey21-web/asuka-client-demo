@@ -10,7 +10,7 @@ export const HERO_WESTERN = 'https://asukacouture.com/cdn/shop/files/1_5915f598-
 
 /* ── Announcement bar texts (2 rotating slides) ── */
 export const ANNOUNCEMENTS = [
-    { text: 'HYDERABAD | MUMBAI | AHMEDABAD', href: '/pages/store-locator' },
+    { text: 'HYDERABAD | MUMBAI | AHMEDABAD', href: '/store-locator' },
     { text: 'Hassle-free returns — 30-day postage paid returns', href: '' },
 ]
 
@@ -105,15 +105,15 @@ export const FOOTER_CONTACT = {
 }
 
 export const FOOTER_LEGALS = [
-    { name: 'About Us', href: '/pages/about-us' },
-    { name: 'Contact Us', href: '/pages/contact' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Contact Us', href: '/contact' },
     { name: 'Shipping Policy', href: 'https://asukacouture.com/policies/shipping-policy' },
     { name: 'Return Policy', href: 'https://asukacouture.com/policies/refund-policy' },
-    { name: 'Stockists', href: '/pages/stockists' },
+    { name: 'Stockists', href: '/stockists' },
     { name: 'Terms of Service', href: 'https://asukacouture.com/policies/terms-of-service' },
     { name: 'Privacy Policy', href: 'https://asukacouture.com/policies/privacy-policy' },
-    { name: 'Store Locator', href: '/pages/store-locator' },
-    { name: 'Book an Appointment', href: '/pages/book-an-appointment' },
+    { name: 'Store Locator', href: '/store-locator' },
+    { name: 'Book an Appointment', href: '/book-an-appointment' },
     { name: 'Blog', href: 'https://asukacouture.com/blogs/posts' },
 ]
 

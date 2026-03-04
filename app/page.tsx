@@ -20,14 +20,14 @@ export default function Home() {
         {/* ═══ 1. HERO — 95vh promo grid (Ethnic + Western) ═══ */}
         <section style={{ position: 'relative', height: '95vh', display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
           {/* Ethnic half */}
-          <Link href="/pages/ethnic-home" onMouseEnter={() => setHeroTab('ethnic')}
+          <Link href="/ethnic-home" onMouseEnter={() => setHeroTab('ethnic')}
             style={{ position: 'relative', overflow: 'hidden', textDecoration: 'none', display: 'block' }}>
             <img src={HERO_ETHNIC} alt="Ethnic Wear"
               style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0, transition: 'all 0.5s ease', transform: heroTab === 'ethnic' ? 'scale(1.02)' : 'scale(1)' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 60%)' }} />
           </Link>
           {/* Western half */}
-          <Link href="/pages/western-home" onMouseEnter={() => setHeroTab('western')}
+          <Link href="/western-home" onMouseEnter={() => setHeroTab('western')}
             style={{ position: 'relative', overflow: 'hidden', textDecoration: 'none', display: 'block' }}>
             <img src={HERO_WESTERN} alt="Western Wear"
               style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0, transition: 'all 0.5s ease', transform: heroTab === 'western' ? 'scale(1.02)' : 'scale(1)' }} />
