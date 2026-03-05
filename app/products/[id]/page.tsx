@@ -106,12 +106,12 @@ export default function ProductPage() {
                                 </button>
                             </div>
 
-                            <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-10 gap-2 mb-8">
+                            <div className="flex flex-wrap gap-2 mb-8">
                                 {SIZES.map(s => (
                                     <button
                                         key={s}
                                         onClick={() => setSelectedSize(s)}
-                                        className={`h-10 text-[11px] border font-mono transition-all duration-300 ${selectedSize === s ? (isWestern ? 'border-[#5f9ea0] bg-[#5f9ea0] text-white' : 'border-black bg-black text-white') : 'border-[#ddd] hover:border-black'}`}
+                                        className={`w-11 h-11 flex items-center justify-center text-[12px] border font-mono transition-all duration-300 ${selectedSize === s ? (isWestern ? 'border-[#008b8b] bg-[#008b8b] text-white' : 'border-black bg-black text-white') : 'border-[#ccc] hover:border-black'}`}
                                     >
                                         {s}
                                     </button>
@@ -129,11 +129,11 @@ export default function ProductPage() {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col gap-3 mb-12">
-                            <button className={`w-full py-5 border ${isWestern ? 'border-[#5f9ea0] text-[#5f9ea0]' : 'border-black text-black'} text-[13px] font-mono tracking-[3px] uppercase font-bold hover:opacity-70 transition-all`}>
+                        <div className="flex flex-col gap-2.5 mb-10">
+                            <button className={`w-full py-4 border ${isWestern ? 'border-[#008b8b] text-[#008b8b]' : 'border-black text-black'} text-[12px] font-mono tracking-[3px] uppercase font-bold hover:opacity-70 transition-all`}>
                                 Add To Cart
                             </button>
-                            <button className={`w-full py-5 ${isWestern ? 'bg-[#5f9ea0]' : 'bg-black'} text-white text-[13px] font-mono tracking-[3px] uppercase font-bold hover:opacity-90 transition-all`}>
+                            <button className={`w-full py-4 ${isWestern ? 'bg-[#008b8b]' : 'bg-black'} text-white text-[12px] font-mono tracking-[3px] uppercase font-bold hover:opacity-90 transition-all`}>
                                 Buy It Now
                             </button>
                         </div>

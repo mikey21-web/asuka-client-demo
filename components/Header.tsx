@@ -60,8 +60,8 @@ export default function Header() {
     return (
       <>
         {/* Brown announcement bar — exact static match from screenshot */}
-        <div className="announcement-bar bg-[#a57a5a] text-white text-center relative z-[1002] py-2.5 overflow-hidden h-[36px] flex items-center justify-center">
-          <div className="font-mono text-[10px] tracking-[3px] font-bold text-white/90">
+        <div className="announcement-bar bg-[#a57a5a] text-white text-center relative z-[1002] py-1.5 h-[28px] flex items-center justify-center">
+          <div className="font-mono text-[9px] tracking-[3px] font-bold text-white/90">
             HYDERABAD &nbsp;&nbsp;|&nbsp;&nbsp; MUMBAI &nbsp;&nbsp;|&nbsp;&nbsp; AHMEDABAD
           </div>
         </div>
@@ -142,14 +142,14 @@ export default function Header() {
   /* ══ INNER PAGES — Standard Asuka Layout ══ */
   return (
     <>
-      <div className="announcement-bar bg-black text-white text-[10px] uppercase font-mono tracking-[2px] flex w-full border-b border-white/10 z-[1002]">
-        <Link href="/ethnic-home" className={`flex-1 py-2 text-center transition-colors ${!isWestern ? 'bg-[#8f654d] text-white' : 'text-white/60 hover:text-white'}`}>Ethnic Wear</Link>
-        <Link href="/western-home" className={`flex-1 py-2 text-center transition-colors ${isWestern ? 'bg-[#008b8b] text-white' : 'text-white/60 hover:text-white'}`}>Western Wear</Link>
+      <div className="announcement-bar bg-black text-white text-[9px] uppercase font-mono tracking-[2px] flex w-full border-b border-white/10 z-[1002]">
+        <Link href="/ethnic-home" className={`flex-1 py-1.5 text-center transition-colors ${!isWestern ? 'bg-[#8f654d] text-white' : 'text-white/60 hover:text-white'}`}>Ethnic Wear</Link>
+        <Link href="/western-home" className={`flex-1 py-1.5 text-center transition-colors ${isWestern ? 'bg-[#008b8b] text-white' : 'text-white/60 hover:text-white'}`}>Western Wear</Link>
       </div>
 
       {/* Main Header Container */}
       <header
-        className={`sticky top-0 z-[1001] transition-all duration-300 py-3 ${isWestern ? 'bg-[#008b8b] text-white shadow-lg' : isEthnic ? 'bg-[#8f654d] text-white shadow-lg' : 'bg-white text-[#1a1410] border-b border-[#eee]'} ${isScrolled ? 'py-1' : 'py-3'}`}
+        className={`sticky top-0 z-[1001] transition-all duration-300 ${isWestern ? 'bg-[#008b8b] text-white shadow-lg' : isEthnic ? 'bg-[#8f654d] text-white shadow-lg' : 'bg-white text-[#1a1410] border-b border-[#eee]'} ${isScrolled ? 'py-0.5' : 'py-1.5'}`}
       >
         <div className="flex items-center justify-between px-5 h-16 max-w-[1600px] mx-auto">
           {/* MOBILE ONLY: Hamburger */}
