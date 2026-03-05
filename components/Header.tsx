@@ -138,43 +138,36 @@ export default function Header() {
     )
   }
 
-  /* ══ INNER PAGES — White sticky header ══ */
+  /* ══ INNER PAGES — Standard Asuka Layout ══ */
   return (
     <>
-      <div className="bg-[#a57a5a] text-white text-center relative z-[1002] py-2.5 overflow-hidden h-[36px] flex items-center justify-center">
-        <div className="font-mono text-[10px] tracking-[3px] font-bold text-white/90">
-          HYDERABAD &nbsp;&nbsp;|&nbsp;&nbsp; MUMBAI &nbsp;&nbsp;|&nbsp;&nbsp; AHMEDABAD
-        </div>
+      <div className="bg-black text-white text-[10px] uppercase font-mono tracking-[2px] flex w-full border-b border-white/10 z-[1002]">
+        <Link href="/ethnic-home" className={`flex-1 py-2 text-center transition-colors ${!isWestern ? 'bg-white/10 text-white' : 'text-white/60 hover:text-white'}`}>Ethnic Wear</Link>
+        <Link href="/western-home" className={`flex-1 py-2 text-center transition-colors ${isWestern ? 'bg-[#609696] text-white' : 'text-white/60 hover:text-white'}`}>Western Wear</Link>
       </div>
 
-      {/* Sticky header — clean white */}
+      {/* Main Header Container */}
       <header
-        style={{ transition: 'box-shadow 0.3s' }}
-        className={`sticky top-0 z-[1001] bg-white border-b border-[#eee] ${isScrolled ? 'shadow-md shadow-black/5' : 'shadow-none'}`}
+        className={`sticky top-0 z-[1001] transition-all duration-300 ${isWestern ? 'bg-[#609696] text-white shadow-lg shadow-black/5' : 'bg-white text-[#1a1410] border-b border-[#eee]'} ${isScrolled ? 'py-1' : 'py-0'}`}
       >
         <div className="flex items-center justify-between px-5 h-16 max-w-[1600px] mx-auto">
           {/* MOBILE ONLY: Hamburger */}
-          <button onClick={() => setIsMenuOpen(true)} className={`md:hidden bg-transparent border-none cursor-pointer p-1 text-[#1a1410]`}>
+          <button onClick={() => setIsMenuOpen(true)} className="md:hidden bg-transparent border-none cursor-pointer p-1 text-current">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
           </button>
 
           {/* Logo */}
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <img src="https://asukacouture.com/cdn/shop/files/Untitled_design_70x.png" alt="Asuka" style={{ height: '28px' }} />
-            <span style={{ fontFamily: 'var(--font-serif)', fontSize: '22px', letterSpacing: '5px', fontWeight: 300, textTransform: 'uppercase' }} className={`hidden sm:inline text-[#1a1410]`}>ASUKĀ</span>
+          <Link href="/" className="flex items-center gap-2 no-underline">
+            {/* Lotus Mark */}
+            <img src="https://asukacouture.com/cdn/shop/files/Untitled_design_70x.png" alt="Asuka" className={`h-[28px] ${isWestern ? 'brightness-100 invert' : ''}`} />
+            <span className="font-serif text-[22px] tracking-[5px] font-light uppercase text-current hidden sm:inline">ASUKĀ</span>
           </Link>
 
           {/* Sub-nav (Desktop only) */}
           <nav style={{ gap: '24px', alignItems: 'center' }} className="hidden lg:flex">
-            <div style={{ display: 'flex', gap: '24px' }}>
-              {(WESTERN_NAV.concat(ETHNIC_NAV)).slice(0, 5).map(link => (
-                <Link key={link.name} href={link.href} style={{
-                  fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500,
-                  letterSpacing: '2px', textTransform: 'uppercase',
-                  color: '#1a1410', textDecoration: 'none', transition: 'color 0.2s',
-                }}
-                  onMouseEnter={e => e.currentTarget.style.color = '#a17a58'}
-                  onMouseLeave={e => e.currentTarget.style.color = '#1a1410'}>
+            <div className="flex gap-6">
+              {(isWestern ? WESTERN_NAV : ETHNIC_NAV).map(link => (
+                <Link key={link.name} href={link.href} className="font-mono text-[11px] font-medium tracking-[2.5px] uppercase no-underline transition-opacity hover:opacity-60 text-current">
                   {link.name}
                 </Link>
               ))}
@@ -208,19 +201,19 @@ export default function Header() {
           </nav>
 
           {/* Right: Actions */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            {/* Search */}
-            <Link href="/search" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: '#1a1410', display: 'flex', alignItems: 'center' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="11" cy="11" r="7" /><path d="m16.5 16.5 4 4" /></svg>
-            </Link>
+          <div className="flex items-center gap-6">
             {/* User */}
-            <button type="button" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: '#1a1410' }} className="hidden sm:block">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="7" r="4" /><path d="M2 21s2-4 10-4 10 4 10 4" /></svg>
+            <button type="button" className="bg-transparent border-none cursor-pointer p-1 text-current hidden sm:block">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
             </button>
+            {/* Search */}
+            <Link href="/search" className="text-current p-1">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><circle cx="11" cy="11" r="7" /><path d="m16.5 16.5 4 4" /></svg>
+            </Link>
             {/* Cart */}
-            <button type="button" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: '#1a1410' }} className="relative">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 0 1-8 0" /></svg>
-              <span className="absolute -top-1 -right-1 flex h-[15px] w-[15px] items-center justify-center rounded-full bg-[#1a1410] text-white text-[9px] font-mono font-bold">
+            <button type="button" className="bg-transparent border-none cursor-pointer p-1 text-current relative">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 0 1-8 0" /></svg>
+              <span className={`absolute -top-1 -right-1 flex h-[15px] w-[15px] items-center justify-center rounded-full text-[9px] font-mono font-bold ${isWestern ? 'bg-white text-[#609696]' : 'bg-[#1a1410] text-white'}`}>
                 0
               </span>
             </button>
