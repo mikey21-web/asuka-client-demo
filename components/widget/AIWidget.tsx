@@ -535,10 +535,18 @@ export default function AIWidget({ initialTab = 'style', isFloating = false }: {
     <>
       <button
         onClick={() => setOpen(true)}
-        className={`animate-fadeUp fixed bottom-5 right-4 sm:bottom-7 sm:right-7 z-[9998] w-[48px] h-[48px] sm:w-[52px] sm:h-[52px] bg-[#1a1410] text-white rounded-full flex items-center justify-center shadow-[0_4px_14px_rgba(26,20,16,0.25)] cursor-pointer hover:scale-110 transition-transform duration-300 ${open ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+        className={`animate-fadeUp fixed bottom-5 left-4 sm:bottom-7 sm:left-7 z-[9998] flex items-center gap-3 cursor-pointer hover:scale-[1.02] transition-transform duration-300 ${open ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
         aria-label="Open AI Assistant"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
+        <div className="relative w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] bg-white rounded-full flex items-center justify-center shadow-[0_4px_14px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
+          <img src="https://asukacouture.com/cdn/shop/files/Untitled_design_70x.png" alt="Asuka Chat" className="w-[24px] h-[24px] sm:w-[30px] sm:h-[30px] object-contain opacity-90" />
+          <div className="absolute -top-1 -right-1 w-[18px] h-[18px] sm:w-[22px] sm:h-[22px] bg-[#1a1410] text-[#a17a58] text-[9px] sm:text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-white">
+            1
+          </div>
+        </div>
+        <div className="bg-white px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.1)] text-[#1a1410] font-sans font-medium text-[12px] sm:text-[13px] flex items-center gap-1 sm:gap-2">
+          Chat with us <span className="text-sm sm:text-lg">👋</span>
+        </div>
       </button>
 
       {open && (
@@ -546,7 +554,7 @@ export default function AIWidget({ initialTab = 'style', isFloating = false }: {
           {/* Mobile Overlay */}
           <div className="fixed inset-0 bg-black/40 z-[9998] sm:hidden animate-fadeIn" onClick={() => setOpen(false)} />
           {/* Mobile vs Desktop Floating Wrapper - Clean Bottom Sheet Style */}
-          <div className="fixed bottom-0 left-0 right-0 sm:left-auto sm:bottom-24 sm:right-7 z-[9999] w-full sm:w-[380px] h-[85vh] sm:h-[600px] max-h-[85vh] flex flex-col animate-panelOpen shadow-[0_-10px_40px_rgba(0,0,0,0.15)] sm:shadow-2xl rounded-t-2xl sm:rounded-2xl overflow-hidden border border-[#e0d5c8] bg-white sm:mt-0">
+          <div className="fixed bottom-0 left-0 right-0 sm:right-auto sm:left-7 sm:bottom-24 z-[9999] w-full sm:w-[380px] h-[85vh] sm:h-[600px] max-h-[85vh] flex flex-col animate-panelOpen shadow-[0_-10px_40px_rgba(0,0,0,0.15)] sm:shadow-2xl rounded-t-2xl sm:rounded-2xl overflow-hidden border border-[#e0d5c8] bg-white sm:mt-0">
             <button onClick={() => setOpen(false)} className="absolute top-2 right-2 sm:top-4 sm:right-4 z-[100] w-8 h-8 flex items-center justify-center bg-[#f5ede3] rounded-full text-[#a17a58] hover:bg-[#a17a58] hover:text-white transition-colors">✕</button>
             {widgetContent}
           </div>

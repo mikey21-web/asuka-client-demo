@@ -141,48 +141,44 @@ export default function Header() {
   /* ══ INNER PAGES — White sticky header ══ */
   return (
     <>
-      {/* Ethnic / Western switcher bar */}
-      <div style={{ display: 'flex', zIndex: 1002, position: 'relative' }}>
-        <Link href="/ethnic-home"
-          style={{ flex: 1, padding: '10px 0', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '3px', color: 'white', textDecoration: 'none', background: isWestern ? '#609696' : '#1a1410', borderRight: '1px solid rgba(255,255,255,0.1)' }}>
-          Ethnic Wear
-        </Link>
-        <Link href="/western-home"
-          style={{ flex: 1, padding: '10px 0', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '3px', color: 'white', textDecoration: 'none', background: isWestern ? '#609696' : '#1a1410' }}>
-          Western Wear
-        </Link>
+      <div className="bg-[#a57a5a] text-white text-center relative z-[1002] py-2.5 overflow-hidden h-[36px] flex items-center justify-center">
+        <div className="font-mono text-[10px] tracking-[3px] font-bold text-white/90">
+          HYDERABAD &nbsp;&nbsp;|&nbsp;&nbsp; MUMBAI &nbsp;&nbsp;|&nbsp;&nbsp; AHMEDABAD
+        </div>
       </div>
 
-      {/* Sticky header — teal on western pages, white on ethnic */}
+      {/* Sticky header — clean white */}
       <header
         style={{ transition: 'box-shadow 0.3s' }}
-        className={`sticky top-0 z-[1001] ${isWestern ? 'bg-[#609696] border-none' : 'bg-white border-b border-[#eee]'} ${isScrolled ? 'shadow-md shadow-black/5' : 'shadow-none'}`}
+        className={`sticky top-0 z-[1001] bg-white border-b border-[#eee] ${isScrolled ? 'shadow-md shadow-black/5' : 'shadow-none'}`}
       >
         <div className="flex items-center justify-between px-5 h-16 max-w-[1600px] mx-auto">
           {/* MOBILE ONLY: Hamburger */}
-          <button onClick={() => setIsMenuOpen(true)} className={`md:hidden bg-transparent border-none cursor-pointer p-1 ${isWestern ? 'text-white' : 'text-[#1a1410]'}`}>
+          <button onClick={() => setIsMenuOpen(true)} className={`md:hidden bg-transparent border-none cursor-pointer p-1 text-[#1a1410]`}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
           </button>
 
           {/* Logo */}
           <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <img src="https://asukacouture.com/cdn/shop/files/Untitled_design_70x.png?v=1672665412" alt="Asuka" style={{ height: '28px' }} className={isWestern ? 'brightness-0 invert' : ''} />
-            <span style={{ fontFamily: 'var(--font-serif)', fontSize: '22px', letterSpacing: '5px', fontWeight: 300, textTransform: 'uppercase' }} className={`hidden sm:inline ${isWestern ? 'text-white' : 'text-[#a17a58]'}`}>ASUKĀ</span>
+            <img src="https://asukacouture.com/cdn/shop/files/Untitled_design_70x.png" alt="Asuka" style={{ height: '28px' }} />
+            <span style={{ fontFamily: 'var(--font-serif)', fontSize: '22px', letterSpacing: '5px', fontWeight: 300, textTransform: 'uppercase' }} className={`hidden sm:inline text-[#1a1410]`}>ASUKĀ</span>
           </Link>
 
           {/* Sub-nav (Desktop only) */}
           <nav style={{ gap: '24px', alignItems: 'center' }} className="hidden lg:flex">
-            {(isWestern ? WESTERN_NAV : ETHNIC_NAV).map(link => (
-              <Link key={link.name} href={link.href} style={{
-                fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500,
-                letterSpacing: '2px', textTransform: 'uppercase',
-                color: isWestern ? 'white' : '#1a1410', textDecoration: 'none', transition: 'color 0.2s',
-              }}
-                onMouseEnter={e => e.currentTarget.style.color = isWestern ? 'rgba(255,255,255,0.7)' : '#a17a58'}
-                onMouseLeave={e => e.currentTarget.style.color = isWestern ? 'white' : '#1a1410'}>
-                {link.name}
-              </Link>
-            ))}
+            <div style={{ display: 'flex', gap: '24px' }}>
+              {(WESTERN_NAV.concat(ETHNIC_NAV)).slice(0, 5).map(link => (
+                <Link key={link.name} href={link.href} style={{
+                  fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500,
+                  letterSpacing: '2px', textTransform: 'uppercase',
+                  color: '#1a1410', textDecoration: 'none', transition: 'color 0.2s',
+                }}
+                  onMouseEnter={e => e.currentTarget.style.color = '#a17a58'}
+                  onMouseLeave={e => e.currentTarget.style.color = '#1a1410'}>
+                  {link.name}
+                </Link>
+              ))}
+            </div>
 
             {/* Accessories dropdown */}
             <div onMouseEnter={() => setShowAcc(true)} onMouseLeave={() => setShowAcc(false)} style={{ position: 'relative' }}>
@@ -212,20 +208,21 @@ export default function Header() {
           </nav>
 
           {/* Right: Actions */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Link href="/make-it-yourself" style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '1.5px', color: isWestern ? 'white' : '#a17a58', textDecoration: 'none', whiteSpace: 'nowrap' }} className="hidden sm:inline">MAKE IT YOURSELF</Link>
-            <Link href="/sizing" style={{ background: isWestern ? 'white' : '#a17a58', color: isWestern ? '#609696' : 'white', padding: '8px 16px', fontSize: '9px', fontFamily: 'var(--font-mono)', letterSpacing: '2px', textDecoration: 'none', fontWeight: 600 }} className="hidden sm:inline">AI SIZER</Link>
-            {/* User */}
-            <button type="button" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: isWestern ? 'white' : '#1a1410' }} className="hidden sm:block">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="7" r="4" /><path d="M2 21s2-4 10-4 10 4 10 4" /></svg>
-            </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             {/* Search */}
-            <Link href="/search" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: isWestern ? 'white' : '#1a1410', display: 'flex', alignItems: 'center' }}>
+            <Link href="/search" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: '#1a1410', display: 'flex', alignItems: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="11" cy="11" r="7" /><path d="m16.5 16.5 4 4" /></svg>
             </Link>
+            {/* User */}
+            <button type="button" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: '#1a1410' }} className="hidden sm:block">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="7" r="4" /><path d="M2 21s2-4 10-4 10 4 10 4" /></svg>
+            </button>
             {/* Cart */}
-            <button type="button" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: isWestern ? 'white' : '#1a1410' }}>
+            <button type="button" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: '#1a1410' }} className="relative">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 0 1-8 0" /></svg>
+              <span className="absolute -top-1 -right-1 flex h-[15px] w-[15px] items-center justify-center rounded-full bg-[#1a1410] text-white text-[9px] font-mono font-bold">
+                0
+              </span>
             </button>
           </div>
         </div>

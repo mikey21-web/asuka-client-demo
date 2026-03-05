@@ -38,7 +38,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-80 pointer-events-none" />
 
             <div className="absolute bottom-[40px] md:bottom-[60px] w-full text-center px-4">
-              <h2 className="font-serif text-white text-[32px] sm:text-[40px] md:text-[54px] font-normal tracking-[4px] m-0" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.5)' }}>
+              <h2 className="font-serif italic text-white text-[32px] sm:text-[40px] md:text-[54px] font-normal tracking-[4px] m-0" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.5)' }}>
                 ETHNIC WEAR
               </h2>
             </div>
@@ -61,7 +61,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-80 pointer-events-none" />
 
             <div className="absolute bottom-[40px] md:bottom-[60px] w-full text-center px-4">
-              <h2 className="font-serif text-white text-[32px] sm:text-[40px] md:text-[54px] font-normal tracking-[4px] m-0" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.5)' }}>
+              <h2 className="font-serif italic text-white text-[32px] sm:text-[40px] md:text-[54px] font-normal tracking-[4px] m-0" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.5)' }}>
                 WESTERN WEAR
               </h2>
             </div>
