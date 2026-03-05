@@ -126,6 +126,12 @@ export default function ProductPage() {
                                     Download size chart for offline visit
                                 </button>
                             </div>
+                            <button
+                                onClick={() => window.dispatchEvent(new CustomEvent('openAsukaPanel', { detail: { tab: 'sizer' } }))}
+                                className="mt-4 flex items-center gap-2 text-[10px] font-mono tracking-[2px] uppercase text-[#a17a58] hover:opacity-70 transition-all border-b border-[#a17a58]/30 pb-1 w-fit"
+                            >
+                                <span className="text-sm">✦</span> Find My Size with AI
+                            </button>
                         </div>
 
                         {/* CTA Buttons */}
@@ -136,6 +142,13 @@ export default function ProductPage() {
                             <button className={`w-full py-4 ${isWestern ? 'bg-[#008b8b]' : 'bg-black'} text-white text-[12px] font-mono tracking-[3px] uppercase font-bold hover:opacity-90 transition-all`}>
                                 Buy It Now
                             </button>
+                            <Link
+                                href="/make-it-yourself"
+                                className="w-full py-4 bg-[#8f654d] text-white text-[11px] font-mono tracking-[3px] uppercase font-bold hover:opacity-90 transition-all text-center no-underline mt-2 flex items-center justify-center gap-2"
+                            >
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 19l7-7-7-7M5 12h14" /></svg>
+                                Make It Yourself (MIY)
+                            </Link>
                         </div>
 
                         {/* Accordions */}

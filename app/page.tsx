@@ -41,6 +41,21 @@ export default function Home() {
               <h2 className="font-serif italic text-white text-[32px] sm:text-[40px] md:text-[54px] font-normal tracking-[4px] m-0" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.5)' }}>
                 ETHNIC WEAR
               </h2>
+              <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+                <button
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('openAsukaPanel', { detail: { tab: 'sizer' } })) }}
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2.5 text-[10px] uppercase font-mono tracking-[2px] transition-all hover:bg-white hover:text-black"
+                >
+                  AI Sizer
+                </button>
+                <Link
+                  href="/make-it-yourself"
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2.5 text-[10px] uppercase font-mono tracking-[2px] transition-all hover:bg-white hover:text-black no-underline"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  AI Atelier
+                </Link>
+              </div>
             </div>
           </Link>
 
@@ -64,9 +79,27 @@ export default function Home() {
               <h2 className="font-serif italic text-white text-[32px] sm:text-[40px] md:text-[54px] font-normal tracking-[4px] m-0" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.5)' }}>
                 WESTERN WEAR
               </h2>
+              <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+                <button
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('openAsukaPanel', { detail: { tab: 'sizer' } })) }}
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2.5 text-[10px] uppercase font-mono tracking-[2px] transition-all hover:bg-white hover:text-black"
+                >
+                  AI Sizer
+                </button>
+                <Link
+                  href="/make-it-yourself"
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2.5 text-[10px] uppercase font-mono tracking-[2px] transition-all hover:bg-white hover:text-black no-underline"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  AI Atelier
+                </Link>
+              </div>
             </div>
           </Link>
         </section>
+
+        {/* ═══ 1.5 DIGITAL ATELIER (AI Integration) ═══ */}
+        <DigitalStylistSection />
 
         {/* ═══ 2. SPOTTED IN ASUKA — Celebrity grid ═══ */}
         <section className="py-[60px] md:py-[80px]">
