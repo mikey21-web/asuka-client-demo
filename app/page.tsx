@@ -20,39 +20,48 @@ export default function Home() {
       <main style={{ background: 'white', minHeight: '100vh' }}>
 
         {/* ═══ 1. SPLIT HERO (Exactly matching live site) ═══ */}
-        <section className="relative h-screen w-full flex flex-col md:flex-row pt-[90px] md:pt-[100px] overflow-hidden bg-black gap-0">
+        <section className="relative h-screen w-full flex flex-col md:flex-row overflow-hidden bg-black gap-0">
           {/* LEFT: ETHNIC WEAR */}
           <Link href="/ethnic-home" className="relative flex-1 group overflow-hidden block w-full h-full">
             <Image
               src={HERO_ETHNIC}
               alt="Ethnic Wear"
               fill
-              className="object-cover object-center transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]"
+              className="object-cover object-[center_20%] transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]"
               priority
             />
-            {/* Gradient for text readability at bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 md:via-transparent md:to-transparent pointer-events-none" />
+            {/* Top Logo */}
+            <div className="absolute top-[40px] md:top-[60px] w-full flex justify-center z-10">
+              <img src="https://asukacouture.com/cdn/shop/files/Untitled_design_70x.png?v=1672665412" alt="Asuka Logo" className="w-[100px] md:w-[160px] brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
+            </div>
+            {/* Minimal gradient for text contrast only */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-80 pointer-events-none" />
 
-            <div className="absolute bottom-[30px] md:bottom-[50px] w-full text-center">
-              <h2 className="font-serif text-white text-[28px] sm:text-[34px] md:text-[44px] font-normal tracking-[2px] m-0 drop-shadow-md">
+            <div className="absolute bottom-[40px] md:bottom-[60px] w-full text-center px-4">
+              <h2 className="font-serif text-white text-[32px] sm:text-[40px] md:text-[54px] font-normal tracking-[4px] m-0" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.5)' }}>
                 ETHNIC WEAR
               </h2>
             </div>
           </Link>
 
           {/* RIGHT: WESTERN WEAR */}
-          <Link href="/western-home" className="relative flex-1 group overflow-hidden block w-full h-full border-t border-white/20 md:border-t-0 md:border-l md:border-white/20">
+          <Link href="/western-home" className="relative flex-1 group overflow-hidden block w-full h-full md:border-l-[0.5px] md:border-white/20">
             <Image
               src={HERO_WESTERN}
               alt="Western Wear"
               fill
-              className="object-cover object-center transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]"
+              className="object-cover object-[center_30%] transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 md:via-transparent md:to-transparent pointer-events-none" />
+            {/* Top Logo */}
+            <div className="absolute top-[40px] md:top-[60px] w-full flex justify-center z-10">
+              <img src="https://asukacouture.com/cdn/shop/files/Untitled_design_70x.png?v=1672665412" alt="Asuka Logo" className="w-[100px] md:w-[160px] brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
+            </div>
+            {/* Minimal gradient for text contrast only */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-80 pointer-events-none" />
 
-            <div className="absolute bottom-[30px] md:bottom-[50px] w-full text-center">
-              <h2 className="font-serif text-white text-[28px] sm:text-[34px] md:text-[44px] font-normal tracking-[2px] m-0 drop-shadow-md">
+            <div className="absolute bottom-[40px] md:bottom-[60px] w-full text-center px-4">
+              <h2 className="font-serif text-white text-[32px] sm:text-[40px] md:text-[54px] font-normal tracking-[4px] m-0" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.5)' }}>
                 WESTERN WEAR
               </h2>
             </div>

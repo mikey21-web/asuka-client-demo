@@ -65,12 +65,9 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Minimal floating header — matches original asukacouture.com homepage */}
+        {/* Transparent floating header — matches original asukacouture.com homepage */}
         <header
-          className={`${isScrolled
-            ? 'fixed top-0 bg-[#0f0b08]/95 backdrop-blur-xl border-b border-black/10 text-white'
-            : 'absolute top-9 bg-transparent bg-gradient-to-b from-black/50 to-transparent text-white border-b border-white/10'
-            } left-0 right-0 z-[1001] transition-all duration-500 ease-out`}
+          className={`fixed top-0 left-0 right-0 z-[1001] transition-all duration-500 ease-out bg-[#0f0b08]/95 backdrop-blur-xl border-b border-black/10 text-white ${isScrolled ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}
         >
           {/* Main Nav Container */}
           <div className="flex items-center justify-between px-6 md:px-12 h-[72px] max-w-[2000px] mx-auto w-full">
@@ -106,7 +103,6 @@ export default function Header() {
                 </span>
               </button>
             </div>
-
           </div>
         </header>
 
